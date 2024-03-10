@@ -10,73 +10,80 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.graphics.Color
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
+import com.example.tiktak.databinding.ActivityMainBinding
+
 var player:Boolean=true
 var win:Boolean=false
 var count=1
 class MainActivity : AppCompatActivity() {
+    private lateinit var dataBinding: ActivityMainBinding
     private var entertaincomponent:MutableList<Int> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var playernamet: TextView = findViewById(R.id.playername)
-        var one: ConstraintLayout = findViewById(R.id.one)
-        var two: ConstraintLayout = findViewById(R.id.two)
-        var three: ConstraintLayout = findViewById(R.id.three)
-        var four: ConstraintLayout = findViewById(R.id.four)
-        var five: ConstraintLayout = findViewById(R.id.five)
-        var six: ConstraintLayout = findViewById(R.id.six)
-        var seven: ConstraintLayout = findViewById(R.id.seven)
-        var eight: ConstraintLayout = findViewById(R.id.eight)
-        var nine: ConstraintLayout = findViewById(R.id.nine)
+        dataBinding=DataBindingUtil.setContentView(this@MainActivity,R.layout.activity_main)
 
+        dataBinding.playername
+        dataBinding.one
+        dataBinding.two
+        dataBinding.three
+        dataBinding.four
+        dataBinding.five
+        dataBinding.six
+        dataBinding.seven
+        dataBinding.eight
+        dataBinding.nine
 
-        var onechild: TextView = findViewById(R.id.onechild)
-        var twochild: TextView = findViewById(R.id.twochild)
-        var threechild: TextView = findViewById(R.id.threechild)
-        var fourchild: TextView = findViewById(R.id.fourchild)
-        var fivechild: TextView = findViewById(R.id.fivechild)
-        var sixchild: TextView = findViewById(R.id.sixchild)
-        var sevenchild: TextView = findViewById(R.id.sevenchild)
-        var eightchild: TextView = findViewById(R.id.eightchild)
-        var ninechild: TextView = findViewById(R.id.ninechild)
-        var result :TextView=findViewById(R.id.resulttext)
-        var restartbtn:Button=findViewById(R.id.restartbtn)
+        dataBinding.playername
+        dataBinding.onechild
+        dataBinding.twochild
+        dataBinding.threechild
+        dataBinding.fourchild
+        dataBinding.fivechild
+        dataBinding.sixchild
+        dataBinding.sevenchild
+        dataBinding.eightchild
+        dataBinding.ninechild
+        dataBinding.resulttext
+       dataBinding.restartbtn
 
-        restartbtn.setOnClickListener {
+        dataBinding.restartbtn.setOnClickListener {
             restart()
         }
 
 
-            one.setOnClickListener {
+        dataBinding.one.setOnClickListener {
              if (!entertaincomponent.contains(R.id.one) && win != true) {
                  if (player)
                  {
-                    onechild.text = "1"
-                    playernamet.text = "Player-2"
+                     dataBinding.onechild.text = "1"
+                    dataBinding.playername.text = "Player-2"
 
                     winpoint("player-1")
                  }
                  else
                  {
-                onechild.text = "0"
-                playernamet.text = "Player-1"
+                     dataBinding.onechild.text = "0"
+                     dataBinding.playername.text = "Player-1"
                 winpoint("player-2")
                  }
             switchPlayer()
             entertaincomponent.add(R.id.one)
         }
     }
-            two.setOnClickListener {
+
+        dataBinding.two.setOnClickListener {
         if (!entertaincomponent.contains(R.id.two) && win != true) {
 
             if (player) {
-                twochild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.twochild.text = "1"
+                dataBinding.playername.text = "Player-2"
                 winpoint("player-1")
             } else {
-                twochild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.twochild.text = "0"
+                dataBinding.playername.text = "Player-1"
                 winpoint("player-2")
 
             }
@@ -84,16 +91,16 @@ class MainActivity : AppCompatActivity() {
             entertaincomponent.add(R.id.two)
         }
     }
-            three.setOnClickListener {
+        dataBinding.three.setOnClickListener {
         if (!entertaincomponent.contains(R.id.three) && win != true) {
 
             if (player) {
-                threechild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.threechild.text = "1"
+                dataBinding.playername.text  = "Player-2"
                 winpoint("player-1")
             } else {
-                threechild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.threechild.text = "0"
+                dataBinding.playername.text = "Player-1"
                 winpoint("player-2")
 
             }
@@ -101,90 +108,90 @@ class MainActivity : AppCompatActivity() {
             entertaincomponent.add(R.id.three)
         }
     }
-            four.setOnClickListener {
+        dataBinding.four.setOnClickListener {
         if (!entertaincomponent.contains(R.id.four) && win != true) {
             if (player) {
-                fourchild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.fourchild.text = "1"
+                dataBinding.playername.text  = "Player-2"
                 winpoint("player-1")
             } else {
-                fourchild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.fourchild.text = "0"
+                dataBinding.playername.text  = "Player-1"
                 winpoint("player-2")
             }
             switchPlayer()
             entertaincomponent.add(R.id.four)
         }
     }
-            five.setOnClickListener {
+        dataBinding.five.setOnClickListener {
         if (!entertaincomponent.contains(R.id.five) && win != true) {
             if (player) {
-                fivechild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.fivechild.text = "1"
+                dataBinding.playername.text = "Player-2"
                 winpoint("player-1")
             } else {
-                fivechild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.fivechild.text = "0"
+                dataBinding.playername.text = "Player-1"
                 winpoint("player-2")
             }
             switchPlayer()
             entertaincomponent.add(R.id.five)
         }
     }
-            six.setOnClickListener {
+        dataBinding.six.setOnClickListener {
         if (!entertaincomponent.contains(R.id.six) && win != true) {
             if (player) {
-                sixchild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.sixchild.text = "1"
+                dataBinding.playername.text  = "Player-2"
                 winpoint("player-1")
             } else {
-                sixchild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.sixchild.text = "0"
+                dataBinding.playername.text = "Player-1"
                 winpoint("player-2")
             }
             switchPlayer()
             entertaincomponent.add(R.id.six)
         }
     }
-            seven.setOnClickListener {
+        dataBinding.seven.setOnClickListener {
         if (!entertaincomponent.contains(R.id.seven) && win != true) {
             if (player) {
-                sevenchild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.sevenchild.text = "1"
+                dataBinding.playername.text = "Player-2"
                 winpoint("player-1")
             } else {
-                sevenchild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.sevenchild.text = "0"
+                dataBinding.playername.text  = "Player-1"
                 winpoint("player-2")
             }
             switchPlayer()
             entertaincomponent.add(R.id.seven)
         }
     }
-            eight.setOnClickListener {
+        dataBinding.eight.setOnClickListener {
         if (!entertaincomponent.contains(R.id.eight) && win != true) {
             if (player) {
-                eightchild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.eightchild.text = "1"
+                dataBinding.playername.text = "Player-2"
                 winpoint("player-1")
             } else {
-                eightchild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.eightchild.text = "0"
+                dataBinding.playername.text = "Player-1"
                 winpoint("player-2")
             }
             switchPlayer()
             entertaincomponent.add(R.id.eight)
         }
     }
-            nine.setOnClickListener {
+        dataBinding.nine.setOnClickListener {
         if (!entertaincomponent.contains(R.id.nine) && win != true) {
             if (player) {
-                ninechild.text = "1"
-                playernamet.text = "Player-2"
+                dataBinding.ninechild.text = "1"
+                dataBinding.playername.text  = "Player-2"
                 winpoint("player-1")
             } else {
-                ninechild.text = "0"
-                playernamet.text = "Player-1"
+                dataBinding.ninechild.text = "0"
+                dataBinding.playername.text  = "Player-1"
                 winpoint("player-2")
             }
             switchPlayer()
@@ -194,192 +201,184 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun winpoint(player:String) {
-        var one: ConstraintLayout= findViewById(R.id.one)
-        var two: ConstraintLayout =findViewById(R.id.two)
-        var three: ConstraintLayout =findViewById(R.id.three)
-        var four: ConstraintLayout =findViewById(R.id.four)
-        var five: ConstraintLayout =findViewById(R.id.five)
-        var six: ConstraintLayout =findViewById(R.id.six)
-        var seven: ConstraintLayout =findViewById(R.id.seven)
-        var eight: ConstraintLayout =findViewById(R.id.eight)
-        var nine: ConstraintLayout =findViewById(R.id.nine)
+        dataBinding.playername
+        dataBinding.one
+        dataBinding.two
+        dataBinding.three
+        dataBinding.four
+        dataBinding.five
+        dataBinding.six
+        dataBinding.seven
+        dataBinding.eight
+        dataBinding.nine
 
-        var onechild: TextView =findViewById(R.id.onechild)
-        var twochild: TextView =findViewById(R.id.twochild)
-        var threechild: TextView =findViewById(R.id.threechild)
-        var fourchild: TextView =findViewById(R.id.fourchild)
-        var fivechild: TextView =findViewById(R.id.fivechild)
-        var sixchild: TextView =findViewById(R.id.sixchild)
-        var sevenchild: TextView =findViewById(R.id.sevenchild)
-        var eightchild: TextView =findViewById(R.id.eightchild)
-        var ninechild: TextView =findViewById(R.id.ninechild)
-        var result:TextView=findViewById(R.id.resulttext)
-        var playernamet:TextView= findViewById(R.id.playername)
-        var restartbtn:Button=findViewById(R.id.restartbtn)
+        dataBinding.playername
+        dataBinding.onechild
+        dataBinding.twochild
+        dataBinding.threechild
+        dataBinding.fourchild
+        dataBinding.fivechild
+        dataBinding.sixchild
+        dataBinding.sevenchild
+        dataBinding.eightchild
+        dataBinding.ninechild
+        dataBinding.resulttext
+        dataBinding.restartbtn
 
-            if(onechild.text=="1"&& twochild.text=="1"&& threechild.text=="1"){
-                result.visibility = View.VISIBLE
-                result.text = "$player Winner"
-                playernamet.visibility = TextView.INVISIBLE
-                one.setBackgroundColor(Color.GREEN)
-                two.setBackgroundColor(Color.GREEN)
-                three.setBackgroundColor(Color.GREEN)
+        dataBinding.resulttext
+        dataBinding.playername
+        dataBinding.restartbtn
+
+            if(dataBinding.onechild.text=="1"&& dataBinding.twochild.text=="1"&& dataBinding.threechild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.one.setBackgroundColor(Color.GREEN)
+                dataBinding.two.setBackgroundColor(Color.GREEN)
+                dataBinding.three.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(onechild.text=="0" && twochild.text=="0" && threechild.text=="0"){
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                one.setBackgroundColor(Color.GREEN)
-                two.setBackgroundColor(Color.GREEN)
-                three.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.onechild.text=="0" && dataBinding.twochild.text=="0" && dataBinding.threechild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.one.setBackgroundColor(Color.GREEN)
+                dataBinding.two.setBackgroundColor(Color.GREEN)
+                dataBinding.three.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(onechild.text=="0"&& fourchild.text=="0"&& sevenchild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                one.setBackgroundColor(Color.GREEN)
-                four.setBackgroundColor(Color.GREEN)
-                seven.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.onechild.text=="0"&& dataBinding.fourchild.text=="0"&& dataBinding.sevenchild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.one.setBackgroundColor(Color.GREEN)
+                dataBinding.four.setBackgroundColor(Color.GREEN)
+                dataBinding.seven.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(onechild.text=="1" && fourchild.text=="1" && sevenchild.text=="1"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.visibility=View.VISIBLE
-                result.text=player+"Winner"
-                playernamet.visibility = TextView.INVISIBLE
-                one.setBackgroundColor(Color.GREEN)
-                four.setBackgroundColor(Color.GREEN)
-                seven.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.onechild.text=="1" && dataBinding.fourchild.text=="1" && dataBinding.sevenchild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.one.setBackgroundColor(Color.GREEN)
+                dataBinding.four.setBackgroundColor(Color.GREEN)
+                dataBinding.seven.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(sevenchild.text=="0" && eightchild.text=="0" && ninechild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                nine.setBackgroundColor(Color.GREEN)
-                eight.setBackgroundColor(Color.GREEN)
-                seven.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.sevenchild.text=="0" && dataBinding.eightchild.text=="0" && dataBinding.ninechild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.seven.setBackgroundColor(Color.GREEN)
+                dataBinding.eight.setBackgroundColor(Color.GREEN)
+                dataBinding.nine.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(sevenchild.text=="1" && eightchild.text=="1" && ninechild.text=="1"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                nine.setBackgroundColor(Color.GREEN)
-                eight.setBackgroundColor(Color.GREEN)
-                seven.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.sevenchild.text=="1" && dataBinding.eightchild.text=="1" && dataBinding.ninechild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.seven.setBackgroundColor(Color.GREEN)
+                dataBinding.eight.setBackgroundColor(Color.GREEN)
+                dataBinding.nine.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(threechild.text=="0" && sixchild.text=="0" && ninechild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                nine.setBackgroundColor(Color.GREEN)
-                three.setBackgroundColor(Color.GREEN)
-                six.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.threechild.text=="0" && dataBinding.sixchild.text=="0" && dataBinding.ninechild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.three.setBackgroundColor(Color.GREEN)
+                dataBinding.six.setBackgroundColor(Color.GREEN)
+                dataBinding.nine.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(threechild.text=="1" && sixchild.text=="1" && ninechild.text=="1"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                nine.setBackgroundColor(Color.GREEN)
-                three.setBackgroundColor(Color.GREEN)
-                six.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.threechild.text=="1" && dataBinding.sixchild.text=="1" && dataBinding.ninechild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.three.setBackgroundColor(Color.GREEN)
+                dataBinding.six.setBackgroundColor(Color.GREEN)
+                dataBinding.nine.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(twochild.text=="0" && fivechild.text=="0" && eightchild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                two.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                eight.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.twochild.text=="0" && dataBinding.fivechild.text=="0" && dataBinding.eightchild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.two.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.eight.setBackgroundColor(Color.GREEN)
                 win=true
 
             }
-            else if(twochild.text=="1" && fivechild.text=="1" && eightchild.text=="1"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                two.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                eight.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.twochild.text=="1" && dataBinding.fivechild.text=="1" && dataBinding.eightchild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.two.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.eight.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(fourchild.text=="1" && fivechild.text=="1" && sixchild.text=="1"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                four.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                six.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.fourchild.text=="1" && dataBinding.fivechild.text=="1" && dataBinding.sixchild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.four.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.six.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(fourchild.text=="0" && fivechild.text=="0" && sixchild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                four.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                six.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.fourchild.text=="0" && dataBinding.fivechild.text=="0" && dataBinding.sixchild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.four.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.six.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(onechild.text=="0" && fivechild.text=="0" && ninechild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                one.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                nine.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.onechild.text=="0" && dataBinding.fivechild.text=="0" && dataBinding.ninechild.text=="0"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.one.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.nine.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(onechild.text=="1" && fivechild.text=="1" && ninechild.text=="1"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                one.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                nine.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.onechild.text=="1" && dataBinding.fivechild.text=="1" && dataBinding.ninechild.text=="1"){
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.one.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.nine.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(threechild.text=="0" && fivechild.text=="0" && sevenchild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                three.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                seven.setBackgroundColor(Color.GREEN)
+            else if(dataBinding.threechild.text=="0" && dataBinding.fivechild.text=="0" && dataBinding.sevenchild.text=="0"){  dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.three.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.seven.setBackgroundColor(Color.GREEN)
                 win=true
             }
-            else if(threechild.text=="1" && fivechild.text=="1" && sevenchild.text=="1") {
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
-                result.text=player+"Winner"
-                result.visibility=View.VISIBLE
-                playernamet.visibility = TextView.INVISIBLE
-                three.setBackgroundColor(Color.GREEN)
-                five.setBackgroundColor(Color.GREEN)
-                seven.setBackgroundColor(Color.GREEN)
-                win=true            }
+            else if(dataBinding.threechild.text=="1" && dataBinding.fivechild.text=="1" && dataBinding.sevenchild.text=="1") {
+                dataBinding.resulttext.visibility = View.VISIBLE
+                dataBinding.resulttext.text = "$player Winner"
+                dataBinding.playername.visibility = TextView.INVISIBLE
+                dataBinding.three.setBackgroundColor(Color.GREEN)
+                dataBinding.five.setBackgroundColor(Color.GREEN)
+                dataBinding.seven.setBackgroundColor(Color.GREEN)
+                win=true
+            }
             else if(count>8){
-            result.text="Match Draw"
-            result.visibility=View.VISIBLE
-            playernamet.visibility=View.INVISIBLE
-            restartbtn.visibility=View.VISIBLE
+            dataBinding.resulttext.text="Match Draw"
+            dataBinding.resulttext.visibility=View.VISIBLE
+            dataBinding.playername.visibility=View.INVISIBLE
+            dataBinding.restartbtn.visibility=View.VISIBLE
         }
 
             }
@@ -392,56 +391,35 @@ class MainActivity : AppCompatActivity() {
 private fun restart(){
     count=1
     entertaincomponent.clear()
-    var onechild: TextView =findViewById(R.id.onechild)
-    var twochild: TextView =findViewById(R.id.twochild)
-    var threechild: TextView =findViewById(R.id.threechild)
-    var fourchild: TextView =findViewById(R.id.fourchild)
-    var fivechild: TextView =findViewById(R.id.fivechild)
-    var sixchild: TextView =findViewById(R.id.sixchild)
-    var sevenchild: TextView =findViewById(R.id.sevenchild)
-    var eightchild: TextView =findViewById(R.id.eightchild)
-    var ninechild: TextView =findViewById(R.id.ninechild)
-    var result:TextView=findViewById(R.id.resulttext)
-    var playernamet:TextView= findViewById(R.id.playername)
 
-    var one: ConstraintLayout= findViewById(R.id.one)
-    var two: ConstraintLayout =findViewById(R.id.two)
-    var three: ConstraintLayout =findViewById(R.id.three)
-    var four: ConstraintLayout =findViewById(R.id.four)
-    var five: ConstraintLayout =findViewById(R.id.five)
-    var six: ConstraintLayout =findViewById(R.id.six)
-    var seven: ConstraintLayout =findViewById(R.id.seven)
-    var eight: ConstraintLayout =findViewById(R.id.eight)
-    var nine: ConstraintLayout =findViewById(R.id.nine)
+    dataBinding.onechild.text=""
+    dataBinding.twochild.text=""
+    dataBinding.threechild.text=""
+    dataBinding.fourchild.text=""
+    dataBinding.fivechild.text=""
+    dataBinding.sixchild.text=""
+    dataBinding.sevenchild.text=""
+    dataBinding.eightchild.text=""
+    dataBinding.ninechild.text=""
 
-
-    onechild.text=""
-    twochild.text=""
-    threechild.text=""
-    fourchild.text=""
-    fivechild.text=""
-    sixchild.text=""
-    sevenchild.text=""
-    eightchild.text=""
-    ninechild.text=""
-
-    one.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    two.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    three.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    four.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    five.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    six.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    seven.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    eight.background=AppCompatResources.getDrawable(this, R.drawable.boader)
-    nine.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.one.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.two.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.three.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.four.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.five.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.six.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.seven.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.eight.background=AppCompatResources.getDrawable(this, R.drawable.boader)
+    dataBinding.nine.background=AppCompatResources.getDrawable(this, R.drawable.boader)
     player=true
     win=false
-    playernamet.text="Player-1"
-    playernamet.visibility=View.VISIBLE
-    result.visibility=View.INVISIBLE
+    dataBinding.playername.text="Player-1"
+    dataBinding.playername.visibility=View.VISIBLE
+    dataBinding.resulttext.visibility=View.INVISIBLE
     entertaincomponent.clear()
 
 }
+
 
 
 }
