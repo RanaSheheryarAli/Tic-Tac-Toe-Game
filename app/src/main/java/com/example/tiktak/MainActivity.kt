@@ -10,11 +10,9 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.graphics.Color
 import android.widget.Button
-
 var player:Boolean=true
 var win:Boolean=false
 var count=1
-
 class MainActivity : AppCompatActivity() {
     private var entertaincomponent:MutableList<Int> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -219,9 +217,6 @@ class MainActivity : AppCompatActivity() {
         var playernamet:TextView= findViewById(R.id.playername)
         var restartbtn:Button=findViewById(R.id.restartbtn)
 
-
-
-
             if(onechild.text=="1"&& twochild.text=="1"&& threechild.text=="1"){
                 result.visibility = View.VISIBLE
                 result.text = "$player Winner"
@@ -232,8 +227,8 @@ class MainActivity : AppCompatActivity() {
                 win=true
             }
             else if(onechild.text=="0" && twochild.text=="0" && threechild.text=="0"){
-                Toast.makeText(applicationContext,player,Toast.LENGTH_LONG).show()
                 result.text=player+"Winner"
+                result.visibility=View.VISIBLE
                 playernamet.visibility = TextView.INVISIBLE
                 one.setBackgroundColor(Color.GREEN)
                 two.setBackgroundColor(Color.GREEN)
