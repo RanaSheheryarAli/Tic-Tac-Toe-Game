@@ -254,6 +254,56 @@
             android:text="Restart Game"
             android:textSize="20sp" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:id="@+id/toprow"
+            app:layout_constraintTop_toTopOf="@+id/two"
+            app:layout_constraintBottom_toBottomOf="@+id/two"
+            app:layout_constraintStart_toStartOf="@+id/one"
+            app:layout_constraintEnd_toEndOf="@+id/three"
+            android:background="@color/black"
+            android:visibility="gone"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:id="@+id/centerrow"
+            app:layout_constraintTop_toTopOf="@+id/five"
+            app:layout_constraintBottom_toBottomOf="@+id/five"
+            app:layout_constraintStart_toStartOf="@+id/four"
+            app:layout_constraintEnd_toEndOf="@+id/six"
+            android:background="@color/black"
+            android:visibility="gone"
+
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:id="@+id/bottomrow"
+            app:layout_constraintTop_toTopOf="@+id/eight"
+            app:layout_constraintBottom_toBottomOf="@+id/eight"
+            app:layout_constraintStart_toStartOf="@+id/seven"
+            app:layout_constraintEnd_toEndOf="@+id/nine"
+            android:background="@color/black"
+            android:visibility="gone"
+
+            />
+
+        <View
+            android:id="@+id/leftcol"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/seven"
+            app:layout_constraintStart_toStartOf="@+id/one"
+            app:layout_constraintEnd_toEndOf="@+id/seven"
+            app:layout_constraintTop_toTopOf="@+id/one"
+            android:visibility="gone"/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
