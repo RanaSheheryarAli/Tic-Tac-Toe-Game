@@ -247,14 +247,14 @@
             android:layout_marginBottom="30dp" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:id="@+id/restartbtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/eight"
             android:layout_marginTop="50dp"
-            android:text="Restart Game"
+            android:background="@drawable/restart"
             android:textSize="20sp" />
 
         <View

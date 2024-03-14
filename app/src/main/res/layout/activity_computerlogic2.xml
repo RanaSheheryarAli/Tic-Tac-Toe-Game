@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
     </data>
@@ -18,9 +19,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="Tic-Tac-Toe with Computer"
+            android:text="Tic-Tac-Toe  with\n      Computer "
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@+id/playername"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -246,14 +247,14 @@
             android:layout_marginBottom="30dp" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:id="@+id/restartbtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/eight"
             android:layout_marginTop="50dp"
-            android:text="Restart Game"
+            android:background="@drawable/restart"
             android:textSize="20sp" />
 
         <View

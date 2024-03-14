@@ -1,21 +1,16 @@
 package com.example.tiktak
-
 import android.view.View
-import android.location.GnssAntennaInfo.PhaseCenterOffset
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.constraintlayout.widget.ConstraintLayout
 import android.graphics.Color
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import com.example.tiktak.databinding.ActivityMainBinding
-
 var player:Boolean=true
 var win:Boolean=false
 var count=1
+
 class MainActivity : AppCompatActivity() {
     private lateinit var dataBinding: ActivityMainBinding
     private var entertaincomponent:MutableList<Int> = arrayListOf()
@@ -292,4 +287,5 @@ class MainActivity : AppCompatActivity() {
         dataBinding.resulttext.visibility=View.INVISIBLE
         entertaincomponent.clear()
     }
+
 }
