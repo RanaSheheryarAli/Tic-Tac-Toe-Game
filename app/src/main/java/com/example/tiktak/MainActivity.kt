@@ -7,11 +7,12 @@ import androidx.appcompat.content.res.AppCompatResources
 import android.graphics.Color
 import androidx.databinding.DataBindingUtil
 import com.example.tiktak.databinding.ActivityMainBinding
-var player:Boolean=true
-var win:Boolean=false
-var count=1
 
 class MainActivity : AppCompatActivity() {
+    var player:Boolean=true
+    var win:Boolean=false
+    var count=1
+
     private lateinit var dataBinding: ActivityMainBinding
     private var entertaincomponent:MutableList<Int> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {

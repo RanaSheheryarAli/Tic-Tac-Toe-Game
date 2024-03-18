@@ -11,19 +11,13 @@ class WellcomeScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Initialize data binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_wellcome_screen)
-
-        // Set click listener for the button
         binding.playerbtn.setOnClickListener {
-            // Create an intent to navigate to MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         binding.computerbtn.setOnClickListener {
-            // Create an intent to navigate to MainActivity
-            val intent = Intent(this, Computerlogic::class.java)
+            val intent = Intent(this, Computer::class.java)
             startActivity(intent)
         }
     }

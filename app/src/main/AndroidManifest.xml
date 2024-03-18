@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiktak"
         tools:targetApi="31">
-        <activity
-            android:name=".Computerlogic"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".Computer"
+            android:exported="false" />
+
         <activity
             android:name=".WellcomeScreen"
             android:exported="true">
